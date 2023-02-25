@@ -1,15 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld></HelloWorld>
+  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
+  <div class="container my-4">
+    <button class="btn btn-primary btn-block" @click="show = !show">Our Gallery</button>
+  </div>
+  <transition name="fade">
+    <Gallery v-show="show"></Gallery>
+  </transition>
+
 </template>
 
 <script>
-import { defineAsyncComponent } from "vue";
-const HelloWorld = defineAsyncComponent(() => import("./components/HelloWorld.vue"));
+import Gallery from "./components/Gallery.vue";
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Gallery,
+  },
+  data(){
+    return {
+      show: false,
+    }
   },
 };
 </script>
@@ -22,5 +32,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.fade-enter-from,
+.fade-leave-to{
+  opacity: 0;
+}
+
+.fade-leave-active,
+.fade-enter-active{
+  transition: opacity 0.5s ease;
 }
 </style>
