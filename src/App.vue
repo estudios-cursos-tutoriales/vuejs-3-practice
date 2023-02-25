@@ -1,22 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <!--  componente genérico: solo acepta componentes que ya este cargados o estén Registrados   -->
-  <component :is="componente"></component>
+  <HelloWorld></HelloWorld>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import { defineAsyncComponent } from "vue";
+const HelloWorld = defineAsyncComponent(() => import("./components/HelloWorld.vue"));
 export default {
   name: "App",
   components: {
-    // Otra forma de cargar un componente es:
-    // Eje: Hello: HelloWord
     HelloWorld,
-  },
-  data() {
-    return {
-      componente: "HelloWorld",
-    };
   },
 };
 </script>
