@@ -1,12 +1,11 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
+  <img alt="Vue logo" src="./assets/logo.png" />
   <div class="container my-4">
     <button class="btn btn-primary btn-block" @click="show = !show">Our Gallery</button>
   </div>
   <transition name="fade">
     <Gallery v-show="show"></Gallery>
   </transition>
-
 </template>
 
 <script>
