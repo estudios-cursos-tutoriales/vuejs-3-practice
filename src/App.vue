@@ -1,44 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <div class="container my-4">
-    <button class="btn btn-primary btn-block" @click="show = !show">Our Gallery</button>
-  </div>
-  <transition name="fade">
-    <Gallery v-show="show"></Gallery>
-  </transition>
+	<div>
+		<Modal />
+	</div>
 </template>
 
 <script>
-import Gallery from "./components/Gallery.vue";
+import Modal from "./components/Modal.vue";
 export default {
-  name: "App",
-  components: {
-    Gallery,
-  },
-  data(){
-    return {
-      show: false,
-    }
-  },
+	name: "App",
+	components: {
+		Modal,
+	},
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.fade-enter-from,
-.fade-leave-to{
-  opacity: 0;
-}
+<style lang="scss">
+	#app {
+		font-family: Avenir, Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;
+		margin-top: 60px;
+	}
+	.btn{
+		outline: none;
+		padding: 8px 30px;
+		border-radius: 4px;
+		border: 1px solid #28692b;
+		background: #388E3C;
+		color: #fff;
+		font-family: 'Inter', sans-serif;
+		cursor: pointer;
+		transition: .5s ease;
+		&:hover{
+			border: 1px solid #37943c;
+			background: #245026;
+		}
+	}
 
-.fade-leave-active,
-.fade-enter-active{
-  transition: opacity 0.5s ease;
-}
 </style>
