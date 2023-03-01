@@ -136,6 +136,13 @@
 		}
 	}
 
+
+	.reader-only {
+    	display: none !important;
+	}
+	div.reader-only {
+    	display: none !important;
+	}
 	.text-1{
 		font-size: 16px;
 		line-height: 27px;
