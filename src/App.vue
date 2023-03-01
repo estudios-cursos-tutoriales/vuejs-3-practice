@@ -1,16 +1,25 @@
 <template>
-	<div>
-		<Modal />
-	</div>
+	<h1>{{ text }}</h1>
 </template>
 
 <script>
-import Modal from "./components/Modal.vue";
 export default {
 	name: "App",
-	components: {
-		Modal,
+
+	data() {
+		return{
+			text: "Hola Vue",
+		};
 	},
+	beforeCreate(){
+		console.log("beforeCreate", this.$data, this.$el);
+	},
+	created(){
+		console.log("create", this.$data, this.$el);
+	}, mounted(){
+		console.log("mounted", this.$data, this.$el);
+	}
+
 };
 </script>
 
@@ -23,20 +32,4 @@ export default {
 		color: #2c3e50;
 		margin-top: 60px;
 	}
-	.btn{
-		outline: none;
-		padding: 8px 30px;
-		border-radius: 4px;
-		border: 1px solid #28692b;
-		background: #388E3C;
-		color: #fff;
-		font-family: 'Inter', sans-serif;
-		cursor: pointer;
-		transition: .5s ease;
-		&:hover{
-			border: 1px solid #37943c;
-			background: #245026;
-		}
-	}
-
 </style>
