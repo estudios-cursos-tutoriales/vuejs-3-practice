@@ -1,5 +1,5 @@
 <template>
-	<Home></Home>
+	<Home first-name="Yormi" last-name="Altamiranda"></Home>
   </template>
 
   <script>
